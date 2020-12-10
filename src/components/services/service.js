@@ -1,7 +1,7 @@
 export default class Service {
     constructor() {
         this._apiBase = 'https://api.kinopoisk.cloud';
-        this.token = 'token/edfc2b9f26a6b951be95a152a2ed9b7e'
+        this.token = 'token/7ad920c98339f8e7a7973d740b2740e2'
     }
 
     getResource = async (url) => {
@@ -14,19 +14,9 @@ export default class Service {
         return await res.json();
     }
 
-    getAllFilms = async () => {
-        const res = await this.getResource(`/movies/`);
-        return res.map(this._transformBook);
-    }
-
     getFilm = async (id) => {
         const film = await this.getResource(`/movies/${id}/`);
         return this._transformFilm(film);
-    }
-
-    getAllSerials = async () => {
-        const res = await this.getResource(`/tv-series/`);
-        return res.map(this._transformBook);
     }
 
     getSerial = async (id) => {
@@ -34,11 +24,24 @@ export default class Service {
         return this._transformSerial(serial);
     }
 
+    getAllFilms = async () => {
+        const res = await this.getResource(`/movies/`);
+        return res.map(this._transformBook);
+    }
+
+    getAllSerials = async () => {
+        const res = await this.getResource(`/tv-series/`);
+        return res.map(this._transformSerial);
+    }
+
     isSet(data) {
         if (data) {
             return data
+        } else if (data == null) {
+            return '-'
         } else {
-            return 'Нет данных :('
+            return '-'
+
         }
     }
 
@@ -73,28 +76,45 @@ export default class Service {
             rating_imdb: this.isSet(film.rating_imdb),
             fees_world: this.isSet(film.fees_world),
             fees_russia: this.isSet(film.fees_russia),
-            // premiere_world: this.isSet(premiere_world),
+            premiere_world: this.isSet(film.premiere_world),
             premiere_russia: this.isSet(film.premiere_russia),
-            fees_world: this.isSet(film.fees_world),
             frames: this.isSet(film.frames),
-            duration: this.isSet(film.collapse.duration),
-            fees_world: this.isSet(film.fees_world),
+            duration: this.isSet(film.collapse.duration)
         };
     }
 
     _transformSerial = (serial) => {
         return {
             id: this.isSet(serial),
-            name: this.isSet(serial.name),
-            region: this.isSet(serial.region),
-            words: this.isSet(serial.words),
-            titles: this.isSet(serial.titles),
-            ancestralWeapons: this.isSet(serial.ancestralWeapons)
+            type: this.isSet(serial.type),
+            title: this.isSet(serial.title),
+            title_alternative: this.isSet(serial.title_alternative),
+            tagline: this.isSet(serial.tagline),
+            description: this.isSet(serial.description),
+            year: this.isSet(serial.year),
+            poster: this.isSet(serial.poster),
+            trailer: this.isSet(serial.trailer),
+            actors: this.isSet(serial.actors),
+            countries: this.isSet(serial.countries),
+            genres: this.isSet(serial.genres),
+            directors: this.isSet(serial.directors),
+            screenwriters: this.isSet(serial.screenwriters),
+            producers: this.isSet(serial.producers),
+            operators: this.isSet(serial.operators),
+            composers: this.isSet(serial.composers),
+            painters: this.isSet(serial.painters),
+            editors: this.isSet(serial.editors),
+            budget: this.isSet(serial.budget),
+            rating_kinopoisk: this.isSet(serial.rating_kinopoisk),
+            rating_imdb: this.isSet(serial.rating_imdb),
+            fees_world: this.isSet(serial.fees_world),
+            fees_russia: this.isSet(serial.fees_russia),
+            premiere_world: this.isSet(serial.premiere_world),
+            premiere_russia: this.isSet(serial.premiere_russia),
+            frames: this.isSet(serial.frames),
+            duration: this.isSet(serial.collapse.duration),
+            seasons: this.isSet(serial.seasons)
         };
     }
 
 }
-const test = new Service();
-
-test.getFilm(87461)
-    .then(res => console.log(res));
