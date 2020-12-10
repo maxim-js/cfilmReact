@@ -1,0 +1,910 @@
+/* 
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+KEYFRAMES -------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+/* Анимация 1 Блок */
+
+@keyframes toggle {
+    from {
+        margin-left: 5px;
+    }
+
+    to {
+      margin-left: 35px;
+    }
+  }
+
+  @keyframes toggle-bgc {
+    from {
+        background-color: #343a40;
+    }
+
+    to {
+        background-color: green;
+    }
+
+  }
+
+
+  /* Анимация 2 блок */
+
+  @keyframes product {
+    from { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+  }
+
+  @keyframes productOther {
+    from { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+    to   { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+  }
+
+  
+
+  .text-typing
+  {
+      width: 100%;
+      margin: 0px auto 25px auto;
+      color: white;
+      text-align: center;
+      font-size: 180%;
+      white-space:nowrap;
+      overflow:hidden;
+      -webkit-animation: type 5s steps(50, end);
+      animation: type 5s steps(50, end);
+  }
+  
+  @keyframes type{
+      from { width: 0; }
+  }
+  
+  @-webkit-keyframes type{
+      from { width: 0; }
+  }
+
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+    }
+  }
+  
+/**
+ * ----------------------------------------
+ * animation jump
+ * ----------------------------------------
+ */
+ 
+ 
+ @-webkit-keyframes jump {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+    }
+  }
+  @keyframes jump {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    25% {
+        -webkit-transform: translateY(-15px);
+                transform: translateY(-15px);
+      }
+    50% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+      }
+    75% {
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
+      }
+    
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+
+
+/* 
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+INDEX.HTML -------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+*/
+.slide-top:hover {
+	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ .jump:hover {
+    -webkit-animation: jump 0.5s ease-in;
+    animation: jump 0.5s ease-in;
+ }
+
+
+.my-container {
+    margin: 0 auto;
+    max-width: 2000px;
+}
+.toggle-block {
+    height: 650px;
+    background-color: black;
+    display: flex;
+    -webkit-display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center; 
+}
+.block {
+    width: 300px;
+    height: 200px;
+    background-color: #c2c2c2;
+}
+
+.left {
+    margin: 50px auto 50px 20px;
+}
+
+.right {
+    margin: 50px 20px 50px auto;
+}
+
+.toggle-main {
+    align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center; 
+}
+
+.toggle-letter {
+    padding: 0 4px;
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+}
+
+.toggle {
+    background-color: #343a40;
+    border-radius: 30px;
+    width: 70px;
+    height: 40px;
+    display: flex;
+    -webkit-display: flex; 
+    align-items: center;
+    animation: toggle-bgc 1s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+
+}
+
+.toggle-circle {
+    background-color: #fff;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    animation: toggle 1s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+.black {
+    background-color: black;
+}
+
+.black-secondary {
+    background-color: rgba(0, 0, 0, 0.83);
+}
+
+.problem-left {
+    padding: 50px 5px;
+    display: flex;
+    -webkit-display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-respons {
+    width: 70%;
+    height: auto;
+}
+.img-respons-100 {
+    width: 100%;
+    height: auto;
+}
+.problem-title {
+    text-align: center;
+}
+
+.flex-block {
+    display: flex;
+    -webkit-display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    -webkit-justify-content: space-around; 
+    min-height: 400px;
+}
+
+.product-block {
+    display: flex;
+    -webkit-display: flex; 
+    justify-content: space-around;
+    -webkit-justify-content: space-around; 
+
+}
+
+.product-block a:hover {
+    text-decoration: none;
+}
+
+
+.product {
+    background-color: #b0252a;
+    display: flex;
+    -webkit-display: flex; 
+    justify-content: center;
+    -webkit-justify-content: center; 
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+}
+.product-color {
+    color: #b0252a;
+}
+.product-cPlace  {
+    animation: product 4.8s linear infinite;
+}
+.product-cTravel {
+    animation: product 7s linear infinite;
+}
+.product-cChat {
+    animation: product 4.7s linear infinite;
+
+}
+.product-cFilm  {
+    animation: productOther 5s linear infinite;
+
+}
+.product-cBook {
+    animation: productOther 4s linear infinite;
+
+}
+
+/* app */
+
+.app {
+    display: flex;
+    -webkit-display: flex; 
+    align-items: center;
+    letter-spacing: 7px;
+}
+
+
+.app-single {
+    height: 70vh;
+    padding: 30px 20% 30px 0;
+    justify-content: center;
+    -webkit-justify-content: center; 
+}
+
+.app-title {
+    font-size: 90px;
+    font-weight: 400;
+}
+
+
+.app-subtitle {
+    display: flex;
+    -webkit-display: flex; 
+    justify-content: center;
+    -webkit-justify-content: center; 
+    align-items: center;
+    font-size: 32px;
+    width: 100%;
+    letter-spacing: 3px;
+    text-align:center;
+    padding-right: 5%;
+    padding-left: 5px;
+}
+.app-subtitle a {
+    padding-top: 20px;
+    font-size: 24px;
+}
+
+.app-subtitle a:hover {
+    color: #c4494d;
+}
+
+.app-double {
+    height: 650px;
+    flex-direction: column;
+
+}
+
+.app-double-title {
+    padding-top: 240px;
+    padding-bottom: 140px;
+    margin-left: 40%;
+    font-size: 72px;
+}
+
+
+.app-cfilm {
+    background-color: white;
+    background-image: url(https://coolchoice.ru/img/cfilm.jpg);
+    background-size: 65% 50%;
+    background-repeat: no-repeat;
+    background-position: -10% 31%;
+}
+
+.app-cbook {
+    background-color: #E5DFD3;
+    background-image: url(https://coolchoice.ru/img/cbook.jpg);
+    background-size: 60% 75%;
+    background-repeat: no-repeat;
+    background-position: -20% 20%;
+}
+
+.app-ctravel {
+    background-color: #E5DFD3;
+    background-image: url(https://coolchoice.ru/img/cTravel.jpg);
+    background-size: 50% 38%;
+    background-repeat: no-repeat;
+    background-position: -3% 39%
+}
+.app-cchat {
+    background-color: white;
+    background-image: url(https://coolchoice.ru/img/cchat.jpg);
+    background-size: 45% 45%;
+    background-repeat: no-repeat;
+    background-position: 0% 30%;
+}
+
+.app-cbook-title {
+}
+
+
+
+/* Блок поддержка */
+
+.support {
+    padding: 20px 0;
+}
+
+.support-title {
+    font-size: 48px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 3px;
+
+    
+}
+.support-subtitle {
+    font-size: 24px;
+    font-weight: 500;
+    height: 20vh;
+    letter-spacing: 1px;
+}
+.support-list {
+    border: 1px solid #b0252a;
+    border-radius: 10px;
+    padding: 0px 15px 15px 15px;
+    background-color: #b0252a;
+}
+.support .row {
+    margin-top: 60px;
+}
+
+.support-border {
+    border-right: 2px solid white;
+}
+
+.support-list-name {
+    padding-top: 11px;
+}
+.support-list-value {
+    padding-bottom: 11px;
+}
+.support-list-border {
+    border-bottom: 1px solid white;
+}
+/* FEEDBACK */
+
+.feedback {
+    padding-left: 15px;
+}
+
+.feedback-link {
+    font-size: 24px;
+    padding: 0 0 5px 10px;
+}
+
+.feedback-link:hover {
+    color: #c4494d;
+}
+
+.feedback-mail {
+    display: flex;
+    -webkit-display: flex; 
+    align-items: center;
+}
+
+
+
+/* card */
+
+.bcard {
+    border-radius: 10px;
+    display: flex;
+    -webkit-display: flex; 
+    font-weight: 600;
+    padding: 10px 15px;
+    margin: 25px 0;
+    flex-direction: column;
+    justify-content: space-around;
+    -webkit-justify-content: space-around; 
+
+    height: 180px;
+    width: 300px;
+}
+
+.bcard-bank {
+    font-weight: 700;
+    font-size: 20px;
+}
+.bcard-bank-sber {
+    color: rgb(4, 106, 56)
+}
+.bcard-bank-tinkoff {
+    color: #d6d7d8
+}
+.bcard-number {
+    letter-spacing: 2px;    
+}
+.bcard-item {
+    display: grid;
+    border: 1px solid black;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    -webkit-grid-template-columns:  1fr 1fr 1fr;
+
+    height: 30px;
+    width: 45px;
+    border-radius: 5px;
+}
+
+.bcard-item-sber {
+    background-color: #d1ae30;
+}
+
+.bcard-item-tinkoff {
+    background-color: #d8d9d9;
+}
+
+.bcard-bgc-sber {
+    background-color: #aab2b5;
+}
+.bcard-bgc-tinkoff {
+    background-color: black;
+}
+.bcard-border-right {
+    border-right: 1px solid black;
+}
+.bcard-border-left {
+    border-left: 1px solid black;
+}
+.bcard-border-bottom {
+    border-bottom: 1px solid black;
+}
+
+
+
+/* 
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+GENERAL STYLE ----------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.color-white {
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+.logo {
+    height: auto;
+    width: 67%;
+}
+.footer-subtitle {
+    color: white;
+    font-size: 20px;
+}
+.footer-list {
+    margin-top: 20px;
+}
+
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+input.active.focus,
+input.active:focus,
+input.focus,
+input:active.focus,
+input:active:focus,
+input:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+outline: 0!important;
+outline-color: transparent!important;
+outline-width: 0!important;
+outline-style: none!important;
+box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}   
+
+li {
+    font-size: 20px;
+}
+li a {
+    color: #ffcc00
+}
+
+a {
+    color: #c4494d;
+}
+
+.btn-firm {
+    background-color: #b0252a;
+    color: white;
+}
+.bg-nav {
+    background-color: rgba(0,0,0,0.8)
+}
+.nav-item {
+    padding-right: 8%;
+}
+
+
+
+/* 
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+CPLACE -----------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.card-toggle {
+    padding: 1% 2%;
+}
+.option {
+    font-size: 20px;
+}
+.option:hover {
+    text-decoration: none;
+}
+.card {
+    border-radius: 0%;
+}
+
+.choose-time {
+    display: flex;
+    -webkit-display: flex; 
+    align-items: baseline;
+}
+.label-time {
+    width: 35px;
+}
+.label-time-to {
+    margin-left: 3%;
+}
+
+/* 
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+CFILM ------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.cproduct {
+    padding: 100px 10px;
+}
+.cproduct-title {
+    color: #b0252a;
+    font-size: 50px;
+}
+.cproduct-subtitle {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.cproduct-p {
+    font-size: 24px;
+}
+.cproduct-block {
+}
+.cproduct-block-left {
+    display: flex;
+    -webkit-display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center; 
+
+}
+.product-support {
+    padding: 20px 0;
+}
+.cproduct-arrow {
+    display: flex;
+    -webkit-display: flex; 
+    justify-content: center;
+    -webkit-justify-content: center; 
+
+}
+
+
+
+
+
+.ctravel {
+    background-color: #E5DFD3;
+}
+
+/* CPLACE APP */
+
+.bgc-grey {
+    background-color:rgba(0, 0, 0, 0.8);
+}
+
+.cplace-block {}
+
+.cplace-title {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+.cplace-subtitle {
+    font-style: 20px;
+    font-weight: 500;   
+}
+.cplace-option {
+    padding: 10px 50px;
+    border-left: 1px solid rgba(0, 0, 0, 0.301);
+}
+
+.cplace-data {
+    padding: 60px;
+    font-size: 24px;
+}
+.btn-firm-lg {
+    padding: 20px 40px;
+    font-size: 26px;
+    border-radius: 25px;
+}
+.cplace-data-box {
+    display: flex;
+    -webkit-display: flex; 
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+
+}
+.cplace-p {
+    font-size: 20px;
+}
+.hr {
+    height: 1px;
+    width: 100%;
+    background-color: #000;
+    margin: 15px 0;
+}
+
+/* 
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+MEDIA ------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+@media (max-width: 992px) {
+    .product {
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .app-cchat {
+        background-size: 35% 45%;
+        background-position: 10% 30%;
+    }
+    .support-border {
+        border: none
+    }
+    .bcard-flex {
+        border-bottom: 2px solid white;
+    }
+
+    .feedback-title {
+        margin-top: 30px;
+    }
+
+    .cplace-option {
+        padding: 10px 35px;
+        border-top: 4px solid rgba(0, 0, 0, 0.301);
+        border-left: none;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    #add-place {
+        flex-direction: column;
+    }
+    .btn-add {
+        margin-top: 20px;
+    }
+
+    .app-cchat {
+        background-size: 35% 35%;
+    }
+}
+
+@media (max-width: 580px) {
+    .app-title {
+        font-size: 64px;
+    }
+    .app-subtitle {
+        font-size: 24px;
+    }
+    .app-subtitle a {
+        font-size: 20px;
+    }
+    .app-double-title {
+        font-size: 64px;
+    }
+    .app-single-img {
+        width: 50%;
+        height: auto;
+    }
+
+    .app-cfilm {
+        background-size: 65% 33%;
+    }
+    .app-cbook {
+        background-size: 60% 55%;
+    }
+
+    .btn-firm-lg {
+        padding: 10px 20px;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+    .cplace-block {
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 507px) {
+    .text-typing {
+        white-space: normal;
+        animation: none;
+        -webkit-animation: none;
+    }
+    .app-double-title {
+        font-size: 48px;
+    }
+
+
+    .app-ctravel {
+        background-size: 50% 22%;
+    }
+    .app-cchat {
+        background-size: 35% 25%;
+    }
+
+    .support-title {
+        font-size: 32px;
+    }
+    .support-subtitle {
+        font-size: 22px;
+    }
+    .app-cbook-title {
+    }
+}
+
+@media (max-width: 380px) {
+
+    li {
+        font-size: 16px;
+    }
+
+    .app-title {
+        font-size: 42px;
+    }
+    .app-subtitle {
+        font-size: 20px;
+    }
+    .app-subtitle a {
+        font-size: 18px;
+    }
+    .app-double-title {
+        font-size: 24px;
+    }
+    .support-subtitle {
+        height: 175px;
+    }
+
+    .app-ctravel {
+        background-size: 50% 17%;
+    }
+    .app-cfilm {
+        background-size: 65% 25%;
+    }
+    .app-cbook {
+        background-size: 60% 45%;
+    }
+    .app-cchat {
+        background-size: 35% 20%;
+    }
+}
